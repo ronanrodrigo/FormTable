@@ -12,6 +12,11 @@
 		340962331BCEF02800FA20F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 340962311BCEF02800FA20F6 /* Main.storyboard */; };
 		340962351BCEF02800FA20F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 340962341BCEF02800FA20F6 /* Assets.xcassets */; };
 		340962381BCEF02800FA20F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 340962361BCEF02800FA20F6 /* LaunchScreen.storyboard */; };
+		3409624D1BD041AA00FA20F6 /* InputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3409624B1BD041AA00FA20F6 /* InputTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		3409624E1BD041AA00FA20F6 /* InputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3409624C1BD041AA00FA20F6 /* InputTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		345865B41BD18987003F0313 /* FormTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345865B31BD18987003F0313 /* FormTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		345865BA1BD1995F003F0313 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345865B81BD1995F003F0313 /* ButtonTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		345865BB1BD1995F003F0313 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345865B91BD1995F003F0313 /* ButtonTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		340962341BCEF02800FA20F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		340962371BCEF02800FA20F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		340962391BCEF02800FA20F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3409624B1BD041AA00FA20F6 /* InputTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTableViewCell.swift; sourceTree = "<group>"; };
+		3409624C1BD041AA00FA20F6 /* InputTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputTableViewCell.xib; sourceTree = "<group>"; };
+		345865B31BD18987003F0313 /* FormTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTableViewController.swift; sourceTree = "<group>"; };
+		345865B81BD1995F003F0313 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
+		345865B91BD1995F003F0313 /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +70,21 @@
 				340962341BCEF02800FA20F6 /* Assets.xcassets */,
 				340962361BCEF02800FA20F6 /* LaunchScreen.storyboard */,
 				340962391BCEF02800FA20F6 /* Info.plist */,
+				345865B71BD1992E003F0313 /* Customs */,
+				345865B31BD18987003F0313 /* FormTableViewController.swift */,
 			);
 			path = FormTable;
+			sourceTree = "<group>";
+		};
+		345865B71BD1992E003F0313 /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				3409624B1BD041AA00FA20F6 /* InputTableViewCell.swift */,
+				3409624C1BD041AA00FA20F6 /* InputTableViewCell.xib */,
+				345865B81BD1995F003F0313 /* ButtonTableViewCell.swift */,
+				345865B91BD1995F003F0313 /* ButtonTableViewCell.xib */,
+			);
+			name = Customs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,8 +144,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				345865BB1BD1995F003F0313 /* ButtonTableViewCell.xib in Resources */,
 				340962381BCEF02800FA20F6 /* LaunchScreen.storyboard in Resources */,
 				340962351BCEF02800FA20F6 /* Assets.xcassets in Resources */,
+				3409624E1BD041AA00FA20F6 /* InputTableViewCell.xib in Resources */,
 				340962331BCEF02800FA20F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,7 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3409624D1BD041AA00FA20F6 /* InputTableViewCell.swift in Sources */,
+				345865B41BD18987003F0313 /* FormTableViewController.swift in Sources */,
 				340962301BCEF02800FA20F6 /* ViewController.swift in Sources */,
+				345865BA1BD1995F003F0313 /* ButtonTableViewCell.swift in Sources */,
 				3409622E1BCEF02800FA20F6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +313,7 @@
 				3409623E1BCEF02800FA20F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
