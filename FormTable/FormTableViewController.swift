@@ -9,7 +9,9 @@
 import UIKit
 
 class FormTableViewController: UITableViewController {
-    var elementsQuantity = 3
+    var telephonesQuantity = 3
+    var telephonesSection = 1
+    var telephonesArray:NSMutableArray = [""]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,7 @@ class FormTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isMultipleFieldsSection(section) {
-            return elementsQuantity
+            return telephonesQuantity
         } else {
             return 2
         }
@@ -49,11 +51,11 @@ class FormTableViewController: UITableViewController {
     }
     
     private func isMultipleFieldsSection(section: Int) -> Bool {
-        return section != 0
+        return section == telephonesSection
     }
     
     private func isLastLine(indexPath: NSIndexPath) -> Bool {
-        return indexPath.row == elementsQuantity-1
+        return indexPath.row == telephonesQuantity-1
     }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -71,7 +73,7 @@ class FormTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             tableView.beginUpdates()
-            elementsQuantity--
+            telephonesQuantity--
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
             tableView.endUpdates()
         } else if editingStyle == .Insert {
@@ -87,11 +89,30 @@ class FormTableViewController: UITableViewController {
     
     private func addNewRow(indexPath: NSIndexPath) {
         tableView.beginUpdates()
-        elementsQuantity++
+        telephonesQuantity++
         let newIndexPaths = [NSIndexPath(forRow: indexPath.row+1, inSection: indexPath.section)]
         tableView.insertRowsAtIndexPaths(newIndexPaths, withRowAnimation: UITableViewRowAnimation.None)
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
         tableView.endUpdates()
+    }
+    
+    @IBAction func doneTapped(sender: AnyObject) {
+        getDynamicInputvalues()
+        print(telephonesArray)
+    }
+    
+    
+    private func getDynamicInputvalues() {
+        telephonesArray = []
+        for i in (0...telephonesQuantity-1) {
+            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: i, inSection: telephonesSection))
+            if cell!.isKindOfClass(InputTableViewCell) {
+                let text = (cell as! InputTableViewCell).editText.text!
+                if text != "" {
+                    telephonesArray.addObject(text)
+                }
+            }
+        }
     }
 
 

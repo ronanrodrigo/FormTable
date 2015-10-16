@@ -41,7 +41,13 @@
                             <outlet property="delegate" destination="YyG-AH-yHM" id="JSp-7w-pIN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ahiu!" id="xyn-cN-lfE"/>
+                    <navigationItem key="navigationItem" title="Ahiu!" id="xyn-cN-lfE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Sdb-eY-MGs">
+                            <connections>
+                                <action selector="doneTapped:" destination="YyG-AH-yHM" id="SLE-5a-YJn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hk8-py-puJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
