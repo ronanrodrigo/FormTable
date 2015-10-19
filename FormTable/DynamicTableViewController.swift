@@ -8,10 +8,11 @@
 
 import UIKit
 
-class FormTableViewController: UITableViewController {
+class DynamicTableViewController: UITableViewController {
     var telephonesQuantity = 3
     var telephonesSection = 1
     var telephonesArray:NSMutableArray = [""]
+    var editTexts:NSMutableArray = NSMutableArray()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,7 @@ class FormTableViewController: UITableViewController {
             let inputCell = tableView.dequeueReusableCellWithIdentifier("inputCell", forIndexPath: indexPath) as! InputTableViewCell
             inputCell.editText.placeholder = "Blaa!"
             inputCell.selectionStyle = UITableViewCellSelectionStyle.None
+            editTexts.addObject(inputCell.editText)
             return inputCell
         }
     }
@@ -103,6 +105,7 @@ class FormTableViewController: UITableViewController {
     
     
     private func getDynamicInputvalues() {
+        print((editTexts.firstObject! as! UITextField).text)
         telephonesArray = []
         for i in (0...telephonesQuantity-1) {
             let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: i, inSection: telephonesSection))
